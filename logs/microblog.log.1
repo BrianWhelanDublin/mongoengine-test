@@ -1,0 +1,108 @@
+2021-01-13 10:38:23,567 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 10:38:50,326 ERROR: Exception on /edit_profile [POST] [in /workspace/.pip-modules/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/mongoengine/document.py", line 400, in save
+    object_id, created = self._save_update(
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/mongoengine/document.py", line 520, in _save_update
+    last_error = wc_collection.update_one(
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/collection.py", line 1019, in update_one
+    self._update_retryable(
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/collection.py", line 868, in _update_retryable
+    return self.__database.client._retryable_write(
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/mongo_client.py", line 1498, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/mongo_client.py", line 1384, in _retry_with_session
+    return self._retry_internal(retryable, func, session, bulk)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/mongo_client.py", line 1416, in _retry_internal
+    return func(session, sock_info, retryable)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/collection.py", line 860, in _update
+    return self._update(
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/collection.py", line 837, in _update
+    _check_write_command_response(result)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/helpers.py", line 222, in _check_write_command_response
+    _raise_last_write_error(write_errors)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/pymongo/helpers.py", line 203, in _raise_last_write_error
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+pymongo.errors.DuplicateKeyError: E11000 duplicate key error collection: 5fd0ea4ed762993fb8d2787d_flask-p3-test.user index: username_1 dup key: { username: "tom" }, full error: {'index': 0, 'code': 11000, 'keyPattern': {'username': 1}, 'keyValue': {'username': 'tom'}, 'errmsg': 'E11000 duplicate key error collection: 5fd0ea4ed762993fb8d2787d_flask-p3-test.user index: username_1 dup key: { username: "tom" }'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/workspace/mongoengine-test/app/routes.py", line 104, in edit_profile
+    current_user.save()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/mongoengine/document.py", line 421, in save
+    raise NotUniqueError(message % err)
+mongoengine.errors.NotUniqueError: Tried to save duplicate unique keys (E11000 duplicate key error collection: 5fd0ea4ed762993fb8d2787d_flask-p3-test.user index: username_1 dup key: { username: "tom" }, full error: {'index': 0, 'code': 11000, 'keyPattern': {'username': 1}, 'keyValue': {'username': 'tom'}, 'errmsg': 'E11000 duplicate key error collection: 5fd0ea4ed762993fb8d2787d_flask-p3-test.user index: username_1 dup key: { username: "tom" }'})
+2021-01-13 10:52:30,315 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 10:52:30,624 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 10:59:38,663 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:01:28,820 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:02:00,008 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:03:29,984 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:04:35,626 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:09:12,764 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:09:20,630 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:09:54,749 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:11:11,437 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:12:23,091 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:13:40,869 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:24:45,273 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:25:46,862 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:31:14,498 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:31:31,552 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:36:27,753 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:37:25,114 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:39:10,227 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:39:19,091 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:39:54,181 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:40:15,913 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:40:16,236 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:41:28,904 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:41:38,762 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:42:21,913 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:43:50,649 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:43:58,495 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:47:45,688 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:47:45,986 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:51:41,323 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:51:55,211 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:59:06,807 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 11:59:52,043 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:03:22,463 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:03:22,764 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:07:13,082 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:09:19,466 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:09:46,601 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:10:26,452 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:10:26,779 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:13:03,274 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:13:37,436 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:14:07,539 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:14:17,402 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:15:13,697 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:15:28,575 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:15:52,616 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:19:08,851 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:19:27,110 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:19:37,108 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:21:17,435 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:23:44,657 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:23:45,119 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:24:49,717 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:26:01,505 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:26:15,550 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
+2021-01-13 12:26:38,624 INFO: Microblog startup [in /workspace/mongoengine-test/app/__init__.py:32]
