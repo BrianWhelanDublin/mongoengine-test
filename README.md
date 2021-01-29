@@ -4,6 +4,7 @@ Flask Application created Following The Flask Mega Tutorial.
 
 - The aims was to get a better understanding of creating a flask application.
 - MongoDb was used as the application Database. 
+- Flask MongoEngine was also used to interact with the database.
 
   - [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
